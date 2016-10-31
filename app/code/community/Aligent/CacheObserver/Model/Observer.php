@@ -303,7 +303,7 @@ class Aligent_CacheObserver_Model_Observer
         if ($cacheData) {
             $sessionKey = $session->getFormKey();
             if (strpos($cacheData,$sessionKey) !== false) {
-                $cacheData = str_replace($sessionKey, '_form_key_placeholder_', $cacheData);
+                $cacheData = str_replace($sessionKey, '_form_key', $cacheData);
                 $tags = $block->getCacheTags();
                 Mage::app()->saveCache($cacheData, $cacheKey, $tags, $block->getCacheLifetime());
             }
